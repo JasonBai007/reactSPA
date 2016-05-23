@@ -1,9 +1,9 @@
 # Profile
-> Target: You could use it as a base to build your own web app.  
+> Target：You could use it as a base to build your own web app.  
 > Techs：React + React-Router + ES6 + whatwg-fetch + Babel + Webpack + NPM
 
 ### Version
-2.0.0
+> 2.0.0  
 
 ### Features
 * 配置完善的开发环境
