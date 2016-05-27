@@ -17,14 +17,14 @@ module.exports = {
     path.resolve(__dirname, 'app/main.jsx')
   ],
   output: {
-    path: __dirname + '/build',
+    path: __dirname + '/app',
     publicPath: '/',
     filename: './bundle.js'
   },
   module: {
     loaders:[
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), loader: 'babel-loader' },
+      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'),exclude:/node_modules/, loader: 'babel-loader' },
     ]
   },
   resolve: {
