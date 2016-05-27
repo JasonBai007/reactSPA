@@ -23,7 +23,7 @@ module.exports = {
   },
   module: {
     loaders:[
-      { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), loader: 'babel-loader' },
     ]
   },

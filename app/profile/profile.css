@@ -1,0 +1,36 @@
+body {
+    font-family: 'Microsoft YaHei';
+    margin: 0;
+}
+#hello {
+    text-align: center;
+    color: #2DB7F5;
+    background: #F7F7F7;
+    border-bottom: 3px solid #CECECE;
+    padding: 10px 0;
+    margin-top: 0;
+}
+#timer {
+    text-align: right;
+    padding-right: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+#todo {
+    background: #F7F7F7;
+    margin-top: 20px;
+    padding: 10px 0 10px 40px;
+}
+#todo label{
+    font-size: 16px;
+}
+#todo ol {
+    list-style: decimal;
+    padding-left: 35px;
+    font-size: 16px;
+    line-height: 30px;
+}
+#output {
+    margin: 40px 0 0;
+}
+
