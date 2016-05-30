@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+require('es5-shim');
+require('es5-shim/es5-sham');
+require('console-polyfill');
+
 // 引入React-Router模块
 import { Router, Route, Link, hashHistory, IndexRoute, Redirect,IndexLink} from 'react-router';
 

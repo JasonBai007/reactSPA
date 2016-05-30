@@ -11,9 +11,10 @@
   "dependencies": {
     "antd": "^1.0.1",
     "babel-runtime": "6.x",
+    "console-polyfill": "^0.2.2",
     "history": "^2.1.1",
-    "react": "15.x",
-    "react-dom": "15.x",
+    "react": "0.14.x",
+    "react-dom": "0.14.x",
     "react-router": "^2.4.0",
     "whatwg-fetch": "^1.0.0"
   },
