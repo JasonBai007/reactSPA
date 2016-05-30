@@ -31,18 +31,17 @@ class Init extends React.Component {
             current: '1',
             openKeys: []
         }
-    }
+    }    
     handleClick = (e) => {
-        console.log('click ', e);
         this.setState({
-          current: e.key,
-          openKeys: e.keyPath.slice(1),
+           current: e.key,
+           openKeys: e.keyPath.slice(1),
         });
     }
     onToggle = (info) => {
-      this.setState({
-        openKeys: info.open ? info.keyPath : info.keyPath.slice(1),
-      });
+        this.setState({
+           openKeys: info.open ? info.keyPath : info.keyPath.slice(1),
+        });
     }
 
     render() {
@@ -62,17 +61,17 @@ class Init extends React.Component {
                             <IndexLink to="/"><span><Icon type="home" /><span>欢迎页</span></span></IndexLink>
                         </Menu.Item>    
                         <SubMenu key="sub2" title={<span><Icon type="windows" /><span>导航一</span></span>}>
-                            <Menu.Item key="2"><Link to="/profile" activeClassName="active">子导航一</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to="/profile">子导航一</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub3" title={<span><Icon type="bar-chart" /><span>导航二</span></span>}>
-                            <Menu.Item key="3"><Link to="/antdes" activeClassName="active">子导航二</Link></Menu.Item>
+                            <Menu.Item key="3"><Link to="/antdes">子导航二</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub4" title={<span><Icon type="appstore" /><span>导航三</span></span>}>
-                            <Menu.Item key="4"><Link to="/gallery" activeClassName="active">子导航三</Link></Menu.Item>
-                            <Menu.Item key="5"><Link to="/subpage" activeClassName="active">子导航四</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/gallery">子导航三</Link></Menu.Item>
+                            <Menu.Item key="5"><Link to="/subpage">子导航四</Link></Menu.Item>
                         </SubMenu>
                         <Menu.Item key="6">
-                            <Link to="/last" activeClassName="active"><span><Icon type="solution" /><span>结尾页</span></span></Link>
+                            <Link to="/last"><span><Icon type="solution" /><span>结尾页</span></span></Link>
                         </Menu.Item>
                     </Menu>                    
                 </div>

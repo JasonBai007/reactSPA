@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,Checkbox,DatePicker,Select,Switch,Form,Row,Col,Table} from 'antd';
+import {Button,Checkbox,DatePicker,Select,Switch,Form,Row,Col,Table,Icon,message,notification } from 'antd';
 import { Link } from 'react-router'
 
 // 引入标准Fetch及IE兼容依赖
@@ -9,14 +9,14 @@ import 'es5-shim/es5-sham.js';
 import 'es6-promise/dist/es6-promise.min.js';
 import 'fetch-ie8/fetch.js';
 
-// 引入表格数据
-import {data, columns} from '../data/tableData.jsx';
-
 import './antdes.css';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
+
+// 定义列
+
 
 export default class Antdes extends React.Component {
     constructor(props) {
@@ -27,7 +27,9 @@ export default class Antdes extends React.Component {
             sDate:'',
             eDate:'',
             ischecked: false,
-            visible: false
+            visible: false,
+            tData:[],
+            loading: true
         }        
     }
     
@@ -45,37 +47,94 @@ export default class Antdes extends React.Component {
     // 过滤无数据广告
     checkChange = (e) => {
         this.setState({ischecked: e.target.checked});
+        if(e.target.checked == true) {
+            message.config({top: 5});
+            message.warning('过滤无数据广告已开启！');            
+        }
     }
 
     // 查询提示框
-    confirmMsg = () => {
-        confirm(
-            `所选广告系列：${this.state.selValue}\n是否过滤无数据广告：${this.state.ischecked}\n起始日期：${this.state.sDate}\n结束日期：${this.state.eDate}`
-        );
+    confirmMsg = () => {           
+        this.setState({tData:[],loading:true});
+        this.fetchTableData();
     } 
+
+    // 行单击事件
+    rowClick = (e) => {
+        console.log(e.key);
+    }
+
+    // 获取表格数据
+    fetchTableData = () => {
+        fetch('data/tableData.json')
+            .then((res) => { console.log(res.status);return res.json(); })
+            .then((data) => { this.setState({loading:false});this.setState({tData:data.rowData}); })
+            .catch((e) => { console.log(e.message);});
+    }
+
+    // 获取下拉框数据
+    fetchSelData = () => {
+        fetch('data/selectData.json')
+            .then((res) => { console.log(res.status);return res.json(); })
+            .then((data) => { this.setState({selV:data.obj}); })
+            .catch((e) => { console.log(e.message); });
+    }
 
     // 组件渲染后获取外界数据(GET)
     componentDidMount() {
-        fetch('data/selectData.json')
-            .then((response) => {
-                console.log(response);
-                return response.json();  //解析JSON数据并返回，相当于JSON.parse(jsonText)
-            })
-            .then((data) => {
-                this.setState({selV:data.obj});         
-            })
-            .catch((error) => {
-                console.log(error.message);
-            });
+        this.fetchSelData();
+        this.fetchTableData();
     }
     
-    render() {
-        const rowSelection = {
-            //空配置项
-        };
-        const pagination = {
-            size:'large'
-        };
+    render() {  
+
+        /*定义表格列*/
+        const columns = [{
+            title: '系列名称',
+            dataIndex: 'name'  
+        }, {
+            title: '系列ID',
+            dataIndex: 'key'
+        }, {
+            title: '投放状态',
+            dataIndex: 'status'
+        }, {
+            title: '曝光量',
+            dataIndex: 'exp'
+        },{
+            title: '曝光URL',
+            dataIndex: 'expURL',
+            render: (text) => ( <a href={text} target="_blank">{text}</a> )
+        }, {
+            title: '点击量',
+            dataIndex: 'clickNum'
+        },{
+            title: '点击率',
+            dataIndex: 'clickRate',
+            render: (text) => ( <span>{text}%</span> )
+        }, {
+            title: '点击均价',
+            dataIndex: 'clickPrice'
+        }, {
+            title: '投放限额',
+            dataIndex: 'limit'
+        }, {
+            title: '操作',
+            dataIndex: 'handle',
+            render: 
+                (t,r,i) => (
+                    <span><Icon type="edit"/>&nbsp;&nbsp;&nbsp;<Icon type="forward" />&nbsp;&nbsp;&nbsp;<Icon type="cross" /></span>
+                )
+        }];
+
+        /*控制查询按钮状态*/
+        let isDisabled = (
+            this.state.selValue ==='' || 
+            this.state.sDate ==='' ||
+            this.state.eDate ==='' ?
+            true : false
+        );
+       
         return (
             <div id="wrap">
                 <div id="header">
@@ -102,7 +161,7 @@ export default class Antdes extends React.Component {
                             </Col>
                             <Col span="2">
                                 <FormItem>
-                                    <Button onClick={this.confirmMsg}>查询</Button>
+                                    <Button onClick={this.confirmMsg} disabled={isDisabled}>查询</Button>
                                 </FormItem>
                             </Col>
                             <Col span="3" push="5">
@@ -115,8 +174,16 @@ export default class Antdes extends React.Component {
                     </Form>
                 </div>
                 <div id="table">
-                    <Table rowSelection={rowSelection} dataSource={data} columns={columns} size="middle" pagination={pagination}/>                    
-                </div>                              
+                    <Table 
+                        rowSelection={{}} 
+                        dataSource={this.state.tData} 
+                        columns={columns} 
+                        size="middle" 
+                        pagination={{size:'large'}} 
+                        onRowClick={this.rowClick}
+                        loading={this.state.loading}
+                    />                   
+                </div>                                             
             </div>
         )
   }
