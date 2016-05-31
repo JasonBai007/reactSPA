@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,Checkbox,DatePicker,Select,Switch,Form,Row,Col,Table,Icon,message,notification } from 'antd';
+import {Button,Checkbox,DatePicker,Select,Radio,Switch,Form,Row,Col,Table,Icon,message,notification,Modal,Input } from 'antd';
 import { Link } from 'react-router'
 
 // 引入标准Fetch及IE兼容依赖
@@ -9,12 +9,12 @@ import 'fetch-ie8/fetch.js';
 
 import './antdes.css';
 
+// 引入 按钮 > 弹出框 > 表单 组件
+import BtnForm from './components/modalForm.jsx';
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
-
-// 定义列
-
 
 export default class Antdes extends React.Component {
     constructor(props) {
@@ -25,7 +25,6 @@ export default class Antdes extends React.Component {
             sDate:'',
             eDate:'',
             ischecked: false,
-            visible: false,
             tData:[],
             loading: true
         }        
@@ -82,8 +81,8 @@ export default class Antdes extends React.Component {
     componentDidMount() {
         this.fetchSelData();
         this.fetchTableData();
-    }
-    
+    }         
+
     render() {  
 
         /*定义表格列*/
@@ -131,7 +130,7 @@ export default class Antdes extends React.Component {
             this.state.sDate ==='' ||
             this.state.eDate ==='' ?
             true : false
-        );
+        );        
        
         return (
             <div id="wrap">
@@ -164,10 +163,9 @@ export default class Antdes extends React.Component {
                             </Col>
                             <Col span="3" push="5">
                                 <FormItem>
-                                    <Button type="primary" size="large">新建广告系列</Button>
+                                    <BtnForm />
                                 </FormItem>
                             </Col>
-
                         </Row>
                     </Form>
                 </div>
@@ -181,7 +179,7 @@ export default class Antdes extends React.Component {
                         onRowClick={this.rowClick}
                         loading={this.state.loading}
                     />                   
-                </div>                                             
+                </div>                                                           
             </div>
         )
   }
