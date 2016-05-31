@@ -1,6 +1,6 @@
 # Profile
 > Target：使用React技术栈开发SPA.  
-> Techs：React + React-Router + ES6 + Fetch + Babel + Webpack + NPM + MockJs + FontAwesome + AnimateCSS
+> Techs：React + React-Router + ES6 + Fetch + Babel + Webpack + NPM + MockJs + FontAwesome + AnimateCSS + Antd
 
 ### Version
 > 3.0.0  
