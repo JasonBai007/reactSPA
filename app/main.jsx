@@ -23,6 +23,7 @@ import Last from './last/last.jsx';
 // 引入Ant-Design样式 & Animate.CSS样式
 import 'antd/dist/antd.css';
 import 'animate.css/animate.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 // 引入主体样式文件
 import './main.css';

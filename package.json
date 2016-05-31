@@ -12,6 +12,7 @@
     "antd": "^1.0.1",
     "babel-runtime": "6.x",
     "console-polyfill": "^0.2.2",
+    "font-awesome": "^4.6.3",
     "history": "^2.1.1",
     "react": "0.14.x",
     "react-dom": "0.14.x",
@@ -34,6 +35,7 @@
     "fetch-ie8": "^1.4.2",
     "open-browser-webpack-plugin": "0.0.2",
     "style-loader": "~0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "1.x",
     "webpack-dev-server": "1.x"
   },

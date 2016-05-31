@@ -25,6 +25,7 @@ module.exports = {
     loaders:[
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'),exclude:/node_modules/, loader: 'babel-loader' },
+      { test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url' }
     ]
   },
   resolve: {
