@@ -51,7 +51,7 @@ class AformInModal extends React.Component {
                             <Input type="text" {...getFieldProps('planName')}/>
                         </FormItem>
                         <FormItem {...formItemLayout} label="推广商品分类：">
-                            <RadioGroup defaultValue="car">
+                            <RadioGroup defaultValue="car" size="large" style={{marginTop:9}}>
                                 <Radio value="car">汽车类</Radio>
                                 <Radio value="carc">汽车综合类</Radio>
                             </RadioGroup>
