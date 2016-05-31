@@ -8,7 +8,8 @@ import 'fetch-ie8/fetch.js';
 
 import './antdes.css';
 
-// 引入 按钮 > 弹出框 > 表单 组件
+// 引入组件
+import Title from './components/title.jsx';
 import Header from './components/header.jsx';
 
 export default class Antdes extends React.Component {
@@ -81,6 +82,7 @@ export default class Antdes extends React.Component {
        
         return (
             <div id="wrap">                
+                <Title titleName="广告系列"/>
                 <Header />
                 <div id="table">
                     <Table 
