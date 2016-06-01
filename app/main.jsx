@@ -82,7 +82,7 @@ class Init extends React.Component {
                     </Menu>                    
                 </div>
                 <div id="rightWrap">
-                    {this.props.children}
+                    {this.props.children}                
                 </div>
             </div>
         )
@@ -99,7 +99,7 @@ ReactDOM.render((
             <Route path="gallery" component={Gallery} />
             <Route path="subpage" component={Subpage} />
             <Route path="last" component={Last} />
-            <Route path="editPage" component={EditPage} />
+            <Route path="editPage/:rowId" component={EditPage} />
         </Route>
     </Router>
 ), document.querySelector('#init'))

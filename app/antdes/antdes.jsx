@@ -78,7 +78,7 @@ export default class Antdes extends React.Component {
             render: 
                 (t,r,i) => (
                     <span>
-                        <Link to="/editPage"><i className="fa fa-pencil" /></Link>&nbsp;&nbsp;&nbsp;
+                        <Link to={"/editPage/"+(i+1)}><i className="fa fa-pencil" /></Link>&nbsp;&nbsp;&nbsp;
                         <i className="fa fa-caret-right fa-lg" />&nbsp;&nbsp;&nbsp;
                         <i className="fa fa-close" />
                     </span>

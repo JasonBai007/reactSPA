@@ -9,7 +9,7 @@ export default class EditForm extends React.Component {
     render() {
       return (
         <div>
-            form          
+            <h1>I am a form.</h1>          
         </div>
       );
     }
