@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table,Icon} from 'antd';
+import {Table,Icon,Tooltip} from 'antd';
 import { Link } from 'react-router';
 
 // 引入标准Fetch及IE兼容依赖
@@ -78,9 +78,8 @@ export default class Antdes extends React.Component {
             render: 
                 (t,r,i) => (
                     <span>
-                        <Link to={"/editPage/"+(i+1)}><i className="fa fa-pencil" /></Link>&nbsp;&nbsp;&nbsp;
-                        <i className="fa fa-caret-right fa-lg" />&nbsp;&nbsp;&nbsp;
-                        <i className="fa fa-close" />
+                        <Tooltip title="编辑"><Link to={"/editPage/"+(i+1)}><i className="fa fa-pencil" /></Link></Tooltip>&nbsp;&nbsp;&nbsp;
+                        <Tooltip title="删除"><i className="fa fa-trash" style={{color:'#FD5B5B'}}/></Tooltip>
                     </span>
                 )
         }];              
