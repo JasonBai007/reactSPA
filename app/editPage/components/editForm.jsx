@@ -36,7 +36,7 @@ class Editform extends React.Component {
 
         const nameProps = getFieldProps('planName', {
             rules: [
-                { required: true, min:5, message: '真的不打算写点什么吗？' },
+                { required: true, max:40, message: '必填，且小于40个字符' }
             ]
         });
         return (
@@ -45,7 +45,7 @@ class Editform extends React.Component {
                     <FormItem 
                         {...formItemLayout} 
                         label="推广计划名称：">
-                        <Input type="text" {...getFieldProps('planName')} {...nameProps} name="planName" id="planName" />
+                        <Input type="text" {...nameProps} name="planName" id="planName" />
                     </FormItem> 
                     <FormItem wrapperCol={{ span: 12, offset: 7 }} >
                         <Button type="primary" onClick={this.handleSubmit}>确定</Button>&nbsp;&nbsp;&nbsp;                      
