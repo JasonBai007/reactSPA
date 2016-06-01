@@ -19,6 +19,7 @@ import Antdes from './antdes/antdes.jsx';
 import Gallery from './gallery/gallery.jsx';
 import Subpage from './subpage/subpage.jsx';
 import Last from './last/last.jsx';
+import EditPage from './editPage/editPage.jsx';
 
 // 引入Ant-Design样式 & Animate.CSS样式
 import 'antd/dist/antd.css';
@@ -98,6 +99,7 @@ ReactDOM.render((
             <Route path="gallery" component={Gallery} />
             <Route path="subpage" component={Subpage} />
             <Route path="last" component={Last} />
+            <Route path="editPage" component={EditPage} />
         </Route>
     </Router>
 ), document.querySelector('#init'))

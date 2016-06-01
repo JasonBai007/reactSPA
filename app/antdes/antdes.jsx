@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table,Icon} from 'antd';
+import { Link } from 'react-router';
 
 // 引入标准Fetch及IE兼容依赖
 import 'whatwg-fetch';
@@ -9,7 +10,7 @@ import 'fetch-ie8/fetch.js';
 import './antdes.css';
 
 // 引入组件
-import Title from './components/title.jsx';
+import Title from '../components/title.jsx';
 import Header from './components/header.jsx';
 
 export default class Antdes extends React.Component {
@@ -76,7 +77,11 @@ export default class Antdes extends React.Component {
             dataIndex: 'handle',
             render: 
                 (t,r,i) => (
-                    <span><i className="fa fa-pencil" />&nbsp;&nbsp;&nbsp;<i className="fa fa-caret-right fa-lg" />&nbsp;&nbsp;&nbsp;<i className="fa fa-close" /></span>
+                    <span>
+                        <Link to="/editPage"><i className="fa fa-pencil" /></Link>&nbsp;&nbsp;&nbsp;
+                        <i className="fa fa-caret-right fa-lg" />&nbsp;&nbsp;&nbsp;
+                        <i className="fa fa-close" />
+                    </span>
                 )
         }];              
        
@@ -94,7 +99,7 @@ export default class Antdes extends React.Component {
                         onRowClick={this.rowClick}
                         loading={this.state.loading}
                     />                   
-                </div>                                                           
+                </div>
             </div>
         )
   }
