@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,Checkbox,Select,Radio,Switch,Form,Row,Col,Icon,Modal,Input,InputNumber,Cascader } from 'antd';
+import {Button,Checkbox,Select,Radio,Form,Row,Col,Icon,Input,InputNumber } from 'antd';
 
 import './editForm.less';
 
@@ -13,6 +13,7 @@ class Editform extends React.Component {
         this.state = {
         }
     }
+    // 单击按钮提交
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((errors, values) => {
@@ -24,11 +25,12 @@ class Editform extends React.Component {
             console.log(values);
         });
     }
+    // 重置事件
     handleReset = (e) => {
         e.preventDefault();
         this.props.form.resetFields();
     }
-
+    // 校验ID函数
     checkNum = (rule, value, callback) => {
         if(value <1000000 || value >9999999) {
             callback(new Error('请输入7位数字'));
@@ -38,10 +40,14 @@ class Editform extends React.Component {
     }
 
     render() {
+
+        {/*定义表格元素样式*/}
         const formItemLayout = {
             labelCol: { span: 6 },
             wrapperCol: { span: 10 },
         };
+
+        {/*解构赋值*/}
         const { getFieldProps, getFieldError, isFieldValidating } = this.props.form;
 
         {/*校验配置*/}
@@ -95,5 +101,6 @@ class Editform extends React.Component {
     }
 }
 
+// 再包装一层
 let EditForm = Form.create()(Editform);
 export default EditForm;

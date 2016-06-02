@@ -21,7 +21,7 @@ export default class Welcome extends React.Component {
         this.interval = setInterval(this.getRandomColor, 500);
     }
 
-    // 组件将要死亡时清除计时器，不清除也可以
+    // 组件将要死亡时清除计时器
     componentWillUnmount() {
         clearInterval(this.interval);  
     }

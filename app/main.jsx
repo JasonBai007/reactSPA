@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// 引入垫片兼容IE
 require('es5-shim');
 require('es5-shim/es5-sham');
 require('console-polyfill');
@@ -8,7 +9,7 @@ require('console-polyfill');
 // 引入React-Router模块
 import { Router, Route, Link, hashHistory, IndexRoute, Redirect,IndexLink} from 'react-router';
 
-// 引入Antd的导航组件
+// 引入Antd组件
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 
@@ -21,15 +22,15 @@ import Subpage from './subpage/subpage.jsx';
 import Last from './last/last.jsx';
 import EditPage from './editPage/editPage.jsx';
 
-// 引入Ant-Design样式 & Animate.CSS样式
-import 'antd/dist/antd.css';
+// 引入Ant-Design样式 & Animate.CSS样式 & font-awesome样式
+import 'antd/dist/antd.min.css';
 import 'animate.css/animate.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
-// 引入主体样式文件
+// 引入主体样式
 import './main.less';
 
-// 配置导航
+// 配置整体组件
 class Init extends React.Component {
     constructor(props) {
         super(props);
@@ -54,7 +55,7 @@ class Init extends React.Component {
         return (
             <div>
                 <div id="leftMenu"> 
-                    <img src='images/logo.png' width="50" id="logo"/>                  
+                    <img src='images/logo.png' width="50" id="logo"/>  {/*logo图标*/}                
                     <Menu onClick={this.handleClick}
                         style={{ width: 146 }}
                         openKeys={this.state.openKeys}
@@ -89,7 +90,7 @@ class Init extends React.Component {
     }
 }
 
-// 配置路由
+// 配置路由，并将路由注入到id为init的DOM元素中
 ReactDOM.render((
     <Router history={hashHistory} >
         <Route path="/" component={Init}>

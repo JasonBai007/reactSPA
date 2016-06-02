@@ -1,5 +1,6 @@
 import React from 'react';
 
+/*页面标题组件，可传参*/
 export default class Title extends React.Component {
     constructor(props) {
         super(props);

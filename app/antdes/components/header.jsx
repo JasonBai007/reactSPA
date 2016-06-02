@@ -81,9 +81,10 @@ export default class Header extends React.Component {
             this.state.eDate ==='' ?
             true : false
         );        
-        
-        let s = new Date();
-        let e = new Date(s.getTime()+30*24*60*60*1000);
+        /*时间控件初始的起止日期，间隔为30天*/
+        let defaultStartDate = new Date();
+        let defaultEndDate = new Date(defaultStartDate.getTime()+30*24*60*60*1000);
+
         return (
             <div id="header">
                 <Form inline>
@@ -99,7 +100,7 @@ export default class Header extends React.Component {
                         </Col>
                         <Col span="5">
                             <FormItem>
-                                <RangePicker onChange={this.dateChange} defaultValue={[s,e]}/>
+                                <RangePicker onChange={this.dateChange} defaultValue={[defaultStartDate,defaultEndDate]}/>
                             </FormItem>
                         </Col>
                         <Col span="3">
