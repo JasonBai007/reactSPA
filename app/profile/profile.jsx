@@ -4,7 +4,7 @@ import React from 'react';
 import Hello from './components/hello/hello.jsx';
 import Timer from './components/timer/timer.jsx';
 
-import './profile.css';
+import './profile.less';
 
 /*简介父组件*/
 export default class Profile extends React.Component {

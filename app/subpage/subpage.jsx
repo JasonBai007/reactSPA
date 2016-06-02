@@ -1,5 +1,5 @@
 import React from 'react';
-import './subpage.css';
+import './subpage.less';
 
 export default class Subpage extends React.Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './last.css';
+import './last.less';
 
 /*结尾组件*/
 export default class Last extends React.Component {

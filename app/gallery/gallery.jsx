@@ -1,5 +1,5 @@
 import React from 'react';
-import './gallery.css';
+import './gallery.less';
 
 export default class Gallery extends React.Component {
     constructor(props) {

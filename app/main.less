@@ -28,25 +28,20 @@
 /* logo样式 */
 #logo {
     display: block;
-    margin: 26px 0;
-}
-#logo {
-    display: block;
     margin: 20px auto;
     -webkit-transition:all 1s;
     -moz-transition:all 1s;
     -o-transition:all 1s;
     -ms-transition:all 1s;
     transition:all 1s;
+    &:hover {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);        
+    }
 }
-#logo:hover {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-
 
 /* 右侧宽度自适应 */
 #rightWrap {
@@ -60,5 +55,4 @@
     right: 0;
     bottom: 0;
     overflow-y: auto;
-
 }

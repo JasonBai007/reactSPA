@@ -27,7 +27,7 @@ import 'animate.css/animate.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 // 引入主体样式文件
-import './main.css';
+import './main.less';
 
 // 配置导航
 class Init extends React.Component {

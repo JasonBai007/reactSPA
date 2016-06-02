@@ -24,8 +24,10 @@ module.exports = {
   module: {
     loaders:[
       { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'),exclude:/node_modules/, loader: 'babel-loader' },
-      { test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url' }
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+      { test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url' }
     ]
   },
   resolve: {

@@ -7,7 +7,7 @@ import 'whatwg-fetch';
 import 'es6-promise/dist/es6-promise.min.js';
 import 'fetch-ie8/fetch.js';
 
-import './antdes.css';
+import './antdes.less';
 
 // 引入组件
 import Title from '../components/title.jsx';
