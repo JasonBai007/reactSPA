@@ -10,7 +10,7 @@ var data=Mock.mock({
         "clickRate|12-98":12,
         "clickPrice|1-198":12,
         "limit|50-250":50,
-        "handle":"
+        "handle":""
     }]
 });
 $("<pre>").text(JSON.stringify(data, null, 4)).appendTo("body");
