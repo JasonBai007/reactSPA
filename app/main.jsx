@@ -7,7 +7,7 @@ require('es5-shim/es5-sham');
 require('console-polyfill');
 
 // 引入React-Router模块
-import { Router, Route, Link, hashHistory,browserHistory, IndexRoute, Redirect,IndexLink} from 'react-router';
+import { Router, Route, Link, hashHistory, IndexRoute, Redirect,IndexLink} from 'react-router';
 
 // 引入Antd组件
 import { Menu, Icon } from 'antd';
@@ -92,7 +92,7 @@ class Init extends React.Component {
 
 // 配置路由，并将路由注入到id为init的DOM元素中
 ReactDOM.render((
-    <Router history={browserHistory} >
+    <Router history={hashHistory} >
         <Route path="/" component={Init}>
             <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />

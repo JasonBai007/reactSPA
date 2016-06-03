@@ -28,7 +28,7 @@ class Editform extends React.Component {
     // 重置事件
     handleReset = (e) => {
         e.preventDefault();
-        this.props.form.resetFields();
+        this.props.form.resetFields();        
     }
     // 校验ID函数
     checkNum = (rule, value, callback) => {
@@ -50,11 +50,15 @@ class Editform extends React.Component {
         {/*解构赋值*/}
         const { getFieldProps, getFieldError, isFieldValidating } = this.props.form;
 
+        {/*接收参数*/}
+        const curId = this.props.editData;
+
         {/*校验配置*/}
         const nameProps = getFieldProps('planName', {
             rules: [
                 { required: true, max:120, message: '必填，且小于120个字符' }
-            ]
+            ],
+            initialValue:'广告系列 '+ curId
         });
         const idProps = getFieldProps('planId', {
             rules: [
