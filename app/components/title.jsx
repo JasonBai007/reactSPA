@@ -4,7 +4,11 @@ import React from 'react';
 export default class Title extends React.Component {
     constructor(props) {
         super(props);
-    }    
+    } 
+
+    handleOver = (e) => {
+        this.props.onMouseOver(e);
+    }   
 
     render() {
         const titleStyle = {
@@ -15,8 +19,11 @@ export default class Title extends React.Component {
             borderRadius:5,
             overflow:'hidden',
         };
+        let props = {
+            onMouseOver:this.handleOver,
+        }
         return (
-            <div style={titleStyle}><h2>{this.props.titleName}</h2></div>
+            <div style={titleStyle} {...this.props} ><h2>{this.props.titleName}</h2></div>
         )
     }
 }

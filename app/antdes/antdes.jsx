@@ -27,6 +27,10 @@ export default class Antdes extends React.Component {
         console.log(e.key);
     }
 
+    displayAlert = () => {
+        alert("这是广告系列:)")
+    }
+
     // 获取表格数据
     fetchTableData = () => {
         fetch('data/tableData.json')
@@ -86,7 +90,7 @@ export default class Antdes extends React.Component {
        
         return (
             <div id="wrap">                
-                <Title titleName="广告系列"/>
+                <Title titleName="广告系列" onMouseOver={this.displayAlert}/>
                 <Header />
                 <div id="table">
                     <Table 
