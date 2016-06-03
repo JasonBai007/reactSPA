@@ -28,7 +28,7 @@ export default class Antdes extends React.Component {
     }
 
     displayAlert = () => {
-        alert("这是广告系列:)")
+        console.log('blablabla')
     }
 
     // 获取表格数据

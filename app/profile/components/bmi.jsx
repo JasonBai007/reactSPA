@@ -8,7 +8,7 @@ export default class Hello extends React.Component {
     
   	render() {  		
   	  	return (
-  	  	 	<h1 id="hello" style={{textAlign: 'center'}} className="animated flipInX">Hi, I am a {this.props.text}</h1>
+            <i className="fa fa-cog fa-spin fa-3x fa-fw"></i>
   	  	);
   	}
 }
