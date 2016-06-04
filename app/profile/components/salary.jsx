@@ -1,24 +1,27 @@
 import React from 'react';
 import {Input,Row,Col} from 'antd';
 
+let handleonce = true;
+
 /* 变换标题组件 */
 export default class Hello extends React.Component {
-  	constructor(props) {
-  	  	super(props);
-  	  	this.state = {
-  	  		old:'',
-  	  		medical:'',
-  	  		offwork:'',
-  	  		house:'',
-  	  		pretax:'',
-  	  		tax:'',
-  	  		output:'',
-  	  	}  	  	
-  	} 
+    constructor(props) {
+        super(props);
+        this.state = {
+          old:'',
+          medical:'',
+          offwork:'',
+          house:'',
+          pretax:'',
+          tax:'',
+          output:'',
+        }       
+    } 
 
-  	handleChange = (e) => {
+    handleChange = (e) => {
   		let input = e.target.value;
-  		if (input >= 10000) {
+  		if (handleonce && input >= 10000) {
+        handleonce = false;
   			alert('呦！不错哦，工资上万了');
   		}
   		let old = input*8/100;
