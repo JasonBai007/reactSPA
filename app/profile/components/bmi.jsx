@@ -8,7 +8,8 @@ class Bmi extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          bmi:''
+          bmi:'',
+          level:'',
         }       
     } 
     // 提交
@@ -18,18 +19,34 @@ class Bmi extends React.Component {
         let w = this.props.form.getFieldsValue().weight;
         let h = this.props.form.getFieldsValue().height;
         let bmi = (w/((h/100)**2)).toFixed(1);
-        this.setState({bmi:bmi});
+        let level;
+        if(bmi<18.5) {
+            level = 0;
+        } else if(bmi >= 18.5 && bmi <= 24.9) {
+            level = 1;
+        } else if(bmi = 25) {
+            level = 2;
+        } else if(bmi >= 25 && bmi <= 29.9) {
+            level = 3;
+        } else if(bmi >= 30) {
+            level = 4;
+        }
+        this.setState({bmi:bmi,level:level});
     }
     // 重置
     handleReset = (e) => {
         e.preventDefault();
         this.props.form.resetFields();
-        this.setState({bmi:''});
+        this.setState({bmi:'',level:''});
+    }
+
+    ComponentDidMount() {
+        console.log(this.refs.card);
     }
      
   	render() {  
   		const { getFieldProps } = this.props.form;
-  		let outstand = 'hehe'		
+  		let i = this.state.level;		
   	  	return (
   	  		<div style={{marginTop:80}}>
   	  			<Form horizontal>
@@ -58,11 +75,11 @@ class Bmi extends React.Component {
 	  	  		<Row type="flex" justify="center" className="rowItem">
   	  				<Col span={10}>
   	  					<Card bodyStyle={{ padding: 10,paddingLeft:40 }}>
-  	  					    <p className={outstand}>偏瘦&nbsp;&nbsp;&nbsp;&nbsp;{'<18.5'}</p>
-  	  					    <p className={outstand}>正常&nbsp;&nbsp;&nbsp;&nbsp;{'18.5-24.9'}</p>
-  	  					    <p className={outstand}>超重&nbsp;&nbsp;&nbsp;&nbsp;{'≥25'}</p>
-  	  					    <p className={outstand}>偏胖&nbsp;&nbsp;&nbsp;&nbsp;{'25.0～29.9'}</p>
-  	  					    <p className={outstand}>肥胖&nbsp;&nbsp;&nbsp;&nbsp;{'30.0～34.9'}</p>
+  	  					    <p className={i===0?'activeP':'die'}>偏瘦&nbsp;&nbsp;&nbsp;&nbsp;{'<18.5'}</p>
+  	  					    <p className={i===1?'activeP':'die'}>正常&nbsp;&nbsp;&nbsp;&nbsp;{'18.5～24.9'}</p>
+  	  					    <p className={i===2?'activeP':'die'}>超重&nbsp;&nbsp;&nbsp;&nbsp;{'=25'}</p>
+  	  					    <p className={i===3?'activeP':'die'}>偏胖&nbsp;&nbsp;&nbsp;&nbsp;{'25.0～29.9'}</p>
+  	  					    <p className={i===4?'activeP':'die'}>肥胖&nbsp;&nbsp;&nbsp;&nbsp;{'30.0～34.9'}</p>
   	  					</Card>
   	  				</Col>
   	  			</Row>
