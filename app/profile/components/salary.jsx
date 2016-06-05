@@ -3,8 +3,8 @@ import {Input,Row,Col} from 'antd';
 
 let handleonce = true;
 
-/* 变换标题组件 */
-export default class Hello extends React.Component {
+/* 工资计算器组件 */
+export default class Salary extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -64,7 +64,7 @@ export default class Hello extends React.Component {
      
   	render() {  		
   	  	return (
-  	  		<div style={{marginTop:60}}>
+  	  		<div style={{marginTop:80}}>
   	  			<Row type="flex" justify="center" className="rowItem">
 	  	  			<Col span={10}>
 		  		  	 	<Input type="number" addonBefore="应发工资：" addonAfter="￥" onChange={this.handleChange}/>	  	  		
@@ -92,7 +92,7 @@ export default class Hello extends React.Component {
 	  	  		</Row>
 	  	  		<Row type="flex" justify="center" className="rowItem">
 	  	  			<Col span={10}>
-	  	  				<Input addonBefore="税前工资：" addonAfter="￥" value={this.state.pretax} id="pretax"/>
+	  	  				<Input addonBefore="税前工资：" addonAfter="￥" value={this.state.pretax} id="red"/>
 	  	  			</Col>
 	  	  		</Row>
 	  	  		<Row type="flex" justify="center" className="rowItem">
@@ -102,7 +102,7 @@ export default class Hello extends React.Component {
 	  	  		</Row>
 	  	  		<Row type="flex" justify="center" className="rowItem">
 	  	  			<Col span={10}>
-	  	  				<Input addonBefore="税后工资：" addonAfter="￥" value={this.state.output} id="output"/>
+	  	  				<Input addonBefore="税后工资：" addonAfter="￥" value={this.state.output} id="blue"/>
 	  	  			</Col>
 	  	  		</Row>	  	  		
 	  	  	</div>

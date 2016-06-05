@@ -103,7 +103,7 @@ export default class Header extends React.Component {
                                 <RangePicker onChange={this.dateChange} defaultValue={[defaultStartDate,defaultEndDate]}/>
                             </FormItem>
                         </Col>
-                        <Col span="3">
+                        <Col span="4">
                             <FormItem>
                                 <Checkbox defaultChecked={false} onChange={this.checkChange}>过滤无数据广告</Checkbox>
                             </FormItem>
@@ -113,7 +113,7 @@ export default class Header extends React.Component {
                                 <Button onClick={this.confirmMsg} disabled={isDisabled}>查询</Button>
                             </FormItem>
                         </Col>
-                        <Col span="3" push="5">
+                        <Col span="3" push="4">
                             <FormItem>
                                 <BtnForm />
                             </FormItem>
