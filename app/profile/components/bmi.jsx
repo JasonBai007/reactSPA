@@ -69,7 +69,7 @@ class Bmi extends React.Component {
 	  	  		</Form>
 	  	  		<Row type="flex" justify="center" className="rowItem">
 	  	  			<Col span={10}>
-	  	  				<Input addonBefore="您的BMI：" value={this.state.bmi} id="red" />
+	  	  				<Input addonBefore="您的BMI：" value={this.state.bmi} id="red" disabled/>
 	  	  			</Col>
 	  	  		</Row>
 	  	  		<Row type="flex" justify="center" className="rowItem">
