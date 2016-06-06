@@ -22,8 +22,6 @@ export default class Header extends React.Component {
             sDate:'',
             eDate:'',
             ischecked: false,
-            tData:[],
-            loading: true
         }        
     }
 
@@ -49,8 +47,7 @@ export default class Header extends React.Component {
 
     // 查询提示框
     confirmMsg = () => {           
-        this.setState({tData:[],loading:true});
-        this.fetchTableData();
+        console.log(this.state.selValue);
     } 
 
     // 获取下拉框数据
@@ -59,14 +56,7 @@ export default class Header extends React.Component {
             .then((res) => { console.log(res.status);return res.json(); })
             .then((data) => { this.setState({selV:data.obj}); })
             .catch((e) => { console.log(e.message); });
-    }
-    // 获取表格数据
-    fetchTableData = () => {
-        fetch('data/tableData.json')
-            .then((res) => { console.log(res.status);return res.json(); })
-            .then((data) => { this.setState({loading:false});this.setState({tData:data.rowData}); })
-            .catch((e) => { console.log(e.message);});
-    }
+    }    
 
     // 组件渲染后获取外界数据(GET)
     componentDidMount() {
@@ -75,12 +65,8 @@ export default class Header extends React.Component {
 
     render() {
         /*控制查询按钮状态*/
-        let isDisabled = (
-            this.state.selValue ==='' || 
-            this.state.sDate ==='' ||
-            this.state.eDate ==='' ?
-            true : false
-        );        
+        let isDisabled = this.state.selValue ==='' ? true : false;
+
         /*时间控件初始的起止日期，间隔为30天*/
         let defaultStartDate = new Date();
         let defaultEndDate = new Date(defaultStartDate.getTime()+30*24*60*60*1000);
