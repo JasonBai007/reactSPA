@@ -25,6 +25,8 @@
 * [webpack 教科书式入门教程](https://segmentfault.com/a/1190000005022872)
 * [传统 Ajax 已死，Fetch 永生](http://www.jianshu.com/p/THLARe#)
 * [Fetch API](https://github.github.io/fetch/)
+* [JS中的call、apply、bind方法](http://www.tuicool.com/articles/EVF3Eb)
+* [ECMAScript 5(ES5)中bind方法、自定义及小拓展](http://www.zhangxinxu.com/wordpress/2012/10/ecmascript-es5-bind-array-slice-call-apply/)
 
 License
 ----
