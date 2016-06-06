@@ -74,7 +74,7 @@ class Bmi extends React.Component {
 	  	  		</Row>
 	  	  		<Row type="flex" justify="center" className="rowItem">
   	  				<Col span={10}>
-  	  					<Card bodyStyle={{ padding: 10,paddingLeft:40 }}>
+  	  					<Card bodyStyle={{ padding:0}} id="cardWrap">
   	  					    <p className={i===0?'activeP':'die'}>偏瘦&nbsp;&nbsp;&nbsp;&nbsp;{'<18.5'}</p>
   	  					    <p className={i===1?'activeP':'die'}>正常&nbsp;&nbsp;&nbsp;&nbsp;{'18.5～24.9'}</p>
   	  					    <p className={i===2?'activeP':'die'}>超重&nbsp;&nbsp;&nbsp;&nbsp;{'=25'}</p>
