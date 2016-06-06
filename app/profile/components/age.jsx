@@ -14,7 +14,7 @@ export default class Age extends React.Component {
     dateChange = (v) => {
         let now = (new Date()).toDateString();
         let msGap = (new Date(now)).getTime() - (new Date(v.toDateString())).getTime();
-        let trueAge = (msGap/1000/60/60/24/365.242199).toFixed(4);
+        let trueAge = (msGap/1000/60/60/24/365.242199).toFixed(2);
         this.setState({output: trueAge});
     }
      
