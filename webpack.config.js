@@ -4,6 +4,10 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    },
     historyApiFallback: true,
     hot: true,
     inline: true,
