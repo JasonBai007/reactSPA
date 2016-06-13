@@ -28,6 +28,7 @@
 * [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 * [JS中的call、apply、bind方法](http://www.tuicool.com/articles/EVF3Eb)
 * [ECMAScript 5(ES5)中bind方法、自定义及小拓展](http://www.zhangxinxu.com/wordpress/2012/10/ecmascript-es5-bind-array-slice-call-apply/)
+* [使用Mock.js进行独立于后端的前端开发](https://segmentfault.com/a/1190000003087224)
 
 License
 ----
