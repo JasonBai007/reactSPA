@@ -33,7 +33,7 @@ export default class Antdes extends React.Component {
 
     // 获取表格数据
     fetchTableData = () => {
-        fetch('data/tableData.json')
+        fetch('../data/tableData.json')
             .then((res) => { console.log(res.status);return res.json(); })
             .then((data) => { this.setState({loading:false});this.setState({tData:data.rowData}); })
             .catch((e) => { console.log(e.message);});

@@ -4,9 +4,8 @@
   "description": "",
   "main": "app/main.jsx",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "build": "webpack  --progress --profile --colors --config webpack.production.config.js",
+    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app"
   },
   "dependencies": {
     "antd": "^1.0.1",
@@ -32,6 +31,7 @@
     "css-loader": "~0.23.0",
     "es5-shim": "^4.5.8",
     "es6-promise": "^3.2.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "fetch-ie8": "^1.4.2",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",

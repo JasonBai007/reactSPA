@@ -23,6 +23,7 @@
 * [webpack使用优化](https://github.com/lcxfs1991/blog/issues/2)
 * [webpack 的 demos](http://zhizhi.betahouse.us/2015/09/27/yi-webpackde-demos/)
 * [webpack 教科书式入门教程](https://segmentfault.com/a/1190000005022872)
+* [Webpack傻瓜指南（二）开发和部署技巧](https://zhuanlan.zhihu.com/p/20397902)
 * [传统 Ajax 已死，Fetch 永生](http://www.jianshu.com/p/THLARe#)
 * [Fetch API](https://github.github.io/fetch/)
 * [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)

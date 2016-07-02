@@ -52,7 +52,7 @@ export default class Header extends React.Component {
 
     // 获取下拉框数据
     fetchSelData = () => {
-        fetch('data/selectData.json')
+        fetch('../data/selectData.json')
             .then((res) => { console.log(res.status);return res.json(); })
             .then((data) => { this.setState({selV:data.obj}); })
             .catch((e) => { console.log(e.message); });

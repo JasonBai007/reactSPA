@@ -55,7 +55,7 @@ class Init extends React.Component {
         return (
             <div>
                 <div id="leftMenu"> 
-                    <img src='images/logo.png' width="50" id="logo"/>  {/*logo图标*/}                
+                    <img src='../images/logo.png' width="50" id="logo"/>  {/*logo图标*/}                
                     <Menu onClick={this.handleClick}
                         style={{ width: 146 }}
                         openKeys={this.state.openKeys}
