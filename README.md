@@ -1,6 +1,6 @@
 # Profile
 > Target：使用React技术栈开发SPA.  
-> Techs：React+Router+ES6+Fetch+Babel+Webpack+Npm+MockJs+FontAwesome+AnimateCSS+Antd+LESS
+> Techs：React+Router+ES6+Fetch+Babel+Webpack+Npm+MockJs+FontAwesome+AnimateCSS+Antd+LESS+jQuery
 
 ### Features
 * 自主配置的开发环境
@@ -10,6 +10,8 @@
 * Fetch代替Ajax
 * 使用MockJs模拟数据
 * 借助FontAwesome + AnimateCSS提高颜值
+* 支持jQuery
+* 自动打开、刷新浏览器
 
 ### Usage
 > 1、安装依赖：$ npm install  

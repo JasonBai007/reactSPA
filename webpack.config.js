@@ -11,14 +11,12 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
-        contentBase: "./app",  //最好写上，否则报错，难道这里是一个坑？
+        contentBase: "./app", //最好写上，否则报错，难道这里是一个坑？
         port: 8080
     },
 
     // 配置入口
     entry: [
-        'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://localhost:8080',
         path.resolve(__dirname, 'app/src/main.jsx')
     ],
     output: {
@@ -41,6 +39,11 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js'),
         new ExtractTextPlugin("style.css"),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ]

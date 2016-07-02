@@ -1,18 +1,19 @@
 {
-  "name": "react",
-  "version": "4.0.0",
+  "name": "reactSPA",
+  "version": "5.0.0",
   "description": "",
-  "main": "app/main.jsx",
+  "main": "app/src/main.jsx",
   "scripts": {
-    "build": "webpack  --progress --profile --colors --config webpack.production.config.js",
-    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app"
+    "build": "webpack  --progress --colors --config webpack.production.config.js",
+    "start": "webpack-dev-server --progress --hot --colors"
   },
   "dependencies": {
     "antd": "^1.0.1",
-    "babel-runtime": "6.x",
+    "babel-runtime": "^6.9.2",
     "console-polyfill": "^0.2.2",
     "font-awesome": "^4.6.3",
     "history": "^2.1.1",
+    "jquery": "^3.0.0",
     "react": "0.14.x",
     "react-dom": "0.14.x",
     "react-router": "^2.4.0",

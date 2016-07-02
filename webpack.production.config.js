@@ -4,7 +4,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //抽取CSS文�
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
-    devtool: 'eval-source-map',  //出错以后就会采用source-map的形式直接显示你出错代码的位置
     entry: [
         path.resolve(__dirname, 'app/src/main.jsx')
     ],
@@ -27,6 +26,11 @@ module.exports = {
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('common.js'),
         new ExtractTextPlugin("style.css"),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
         new uglifyJsPlugin({
             compress: {
                 warnings: false
