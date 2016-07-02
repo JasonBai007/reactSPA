@@ -9,7 +9,7 @@ module.exports = {
         path.resolve(__dirname, 'app/src/main.jsx')
     ],
     output: {
-        path: __dirname + 'app/dist',
+        path: __dirname + '/app/dist',
         filename: '[name].bundle.js'
     },
     module: {
