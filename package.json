@@ -17,6 +17,7 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.4.0",
+    "reflux": "^0.4.1",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
