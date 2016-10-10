@@ -9,12 +9,12 @@ var actions = Reflux.createActions([
 var myStore = Reflux.createStore({
     listenables: actions,
     init() {
-        this.state = {count:0}
+        this.num = {count:0}
     },
     onIncrement() {
-        console.log('我被执行了！');
-        this.state.count++;
-        this.trigger(this.state);
+        console.log('我被执行了！');        
+        this.num.count++;
+        this.trigger(this.num.count);
     }
 });
 
@@ -22,16 +22,26 @@ export default class Gallery extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.store = myStore;               
+    }
+    componentDidMount(){
+        this.unsubscribe = myStore.listen(
+            (v) => {
+                this.setState({count:v}) 
+            }
+        );
+    }
+    componentWillUnmount() {
+        this.unsubscribe();
     }
     handleClick = () => {
         actions.increment();
+        console.log(this.state.count);
     }
     render() {        
         return (
             <div>
                 <button onClick={this.handleClick}>单击增加数值</button>
-                <p>{this.state.count}</p>
+                <span> {this.state.count}</span>
             </div>
         )
     }       
