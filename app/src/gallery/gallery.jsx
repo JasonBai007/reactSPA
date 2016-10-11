@@ -41,7 +41,7 @@ export default class Gallery extends React.Component {
             <div>
                 <Title name="Reflux起步" />
                 <span id="num"> {this.state.count}</span>
-                <Button onClick={this.handleClick} type="ghost" size="large">+</Button>
+                <Button onClick={this.handleClick} type="ghost" size="large" id="increase">+</Button>
             </div>
         )
     }       
