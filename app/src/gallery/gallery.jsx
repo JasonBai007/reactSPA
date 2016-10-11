@@ -20,12 +20,12 @@ var myStore = Reflux.createStore({
 export default class Gallery extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {count:0};
     }
     componentDidMount(){
         this.unsubscribe = myStore.listen(
             (v) => {
-                this.setState({count:v}) 
+                this.setState({count:v}); 
             }
         );
     }
@@ -39,9 +39,9 @@ export default class Gallery extends React.Component {
     render() {        
         return (
             <div>
-                <Title name="Reflux练习板块" />
-                <Button onClick={this.handleClick}>单击增加数值</Button>
-                <span> {this.state.count}</span>
+                <Title name="Reflux起步" />
+                <span id="num"> {this.state.count}</span>
+                <Button onClick={this.handleClick} type="ghost" size="large">+</Button>
             </div>
         )
     }       

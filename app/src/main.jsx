@@ -68,14 +68,14 @@ class Init extends React.Component {
                             <IndexLink to="/"><span><Icon type="home" /><span>欢迎页</span></span></IndexLink>
                         </Menu.Item>    
                         <SubMenu key="sub2" title={<span><Icon type="windows" /><span>导航一</span></span>}>
-                            <Menu.Item key="2"><Link to="/profile">子导航一</Link></Menu.Item>
+                            <Menu.Item key="2"><Link to="/profile">小应用</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub3" title={<span><Icon type="bar-chart" /><span>导航二</span></span>}>
-                            <Menu.Item key="3"><Link to="/antdes">子导航二</Link></Menu.Item>
+                            <Menu.Item key="3"><Link to="/antdes">广告系列</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub4" title={<span><Icon type="appstore" /><span>导航三</span></span>}>
-                            <Menu.Item key="4"><Link to="/gallery">子导航三</Link></Menu.Item>
-                            <Menu.Item key="5"><Link to="/subpage">子导航四</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/gallery">Reflux起步</Link></Menu.Item>
+                            <Menu.Item key="5"><Link to="/subpage">施工中</Link></Menu.Item>
                         </SubMenu>
                         <Menu.Item key="6">
                             <Link to="/last"><span><Icon type="solution" /><span>结尾页</span></span></Link>
