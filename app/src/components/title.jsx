@@ -23,7 +23,7 @@ export default class Title extends React.Component {
             onMouseOver:this.handleOver,
         }
         return (
-            <div style={titleStyle} {...this.props} ><h2>{this.props.titleName}</h2></div>
+            <div style={titleStyle} {...this.props} ><h2>{this.props.name}</h2></div>
         )
     }
 }

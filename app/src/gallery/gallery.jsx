@@ -1,10 +1,10 @@
 import React from 'react';
 import Reflux from 'reflux';
+import {Button} from 'antd';
+import Title from '../components/title.jsx';
 import './gallery.less';
 
-var actions = Reflux.createActions([
-    'increment'
-]);
+var actions = Reflux.createActions(['increment']);
 
 var myStore = Reflux.createStore({
     listenables: actions,
@@ -12,7 +12,6 @@ var myStore = Reflux.createStore({
         this.num = {count:0}
     },
     onIncrement() {
-        console.log('我被执行了！');        
         this.num.count++;
         this.trigger(this.num.count);
     }
@@ -40,7 +39,8 @@ export default class Gallery extends React.Component {
     render() {        
         return (
             <div>
-                <button onClick={this.handleClick}>单击增加数值</button>
+                <Title name="Reflux练习板块" />
+                <Button onClick={this.handleClick}>单击增加数值</Button>
                 <span> {this.state.count}</span>
             </div>
         )

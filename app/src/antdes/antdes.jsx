@@ -28,7 +28,7 @@ export default class Antdes extends React.Component {
     }
 
     displayAlert = () => {
-        console.log('blablabla')
+        console.log('mouseover event has been triggered.')
     }
 
     // 获取表格数据
@@ -90,7 +90,7 @@ export default class Antdes extends React.Component {
        
         return (
             <div id="wrap">                
-                <Title titleName="广告系列" onMouseOver={this.displayAlert}/>
+                <Title name="广告系列" onMouseOver={this.displayAlert}/>
                 <Header />
                 <div id="table">
                     <Table 
