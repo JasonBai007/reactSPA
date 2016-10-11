@@ -1,6 +1,6 @@
 # Profile
 > Target：使用React技术栈开发SPA.  
-> Techs：React-ReactRouter-Reflux-ES6-Antd-Fetch-Babel-Webpack-Npm-MockJs-Less
+> Techs：React - ReactRouter - Reflux - ES6 - Antd - Fetch - Babel - Webpack - Npm - MockJs - Less
 
 ### Features
 * 自主配置开发环境
@@ -27,6 +27,9 @@
 * [webpack 的 demos](http://zhizhi.betahouse.us/2015/09/27/yi-webpackde-demos/)
 * [webpack 教科书式入门教程](https://segmentfault.com/a/1190000005022872)
 * [Webpack傻瓜指南（二）开发和部署技巧](https://zhuanlan.zhihu.com/p/20397902)
+* [React Reflux](https://segmentfault.com/a/1190000002793786)
+* [React+reflux应用 IE8/9/10/11兼容实践](https://segmentfault.com/a/1190000005794242#articleHeader9)
+* [Reflux系列01：异步操作经验小结](https://segmentfault.com/a/1190000004250062)
 * [传统 Ajax 已死，Fetch 永生](http://www.jianshu.com/p/THLARe#)
 * [Fetch API](https://github.github.io/fetch/)
 * [JavaScript教程](http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)

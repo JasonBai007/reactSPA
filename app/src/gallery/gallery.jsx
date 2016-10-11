@@ -1,8 +1,10 @@
 import React from 'react';
 import Reflux from 'reflux';
-import {Button} from 'antd';
+import {Button, Collapse} from 'antd';
 import Title from '../components/title.jsx';
 import './gallery.less';
+
+const Panel = Collapse.Panel;
 
 var actions = Reflux.createActions(['increment']);
 
@@ -42,6 +44,17 @@ export default class Gallery extends React.Component {
                 <Title name="Reflux起步" />
                 <span id="num"> {this.state.count}</span>
                 <Button onClick={this.handleClick} type="ghost" size="large" id="increase">+</Button>
+                <Collapse accordion>
+                    <Panel header='action' key="1">
+                        <p>blablabla</p>
+                    </Panel>
+                    <Panel header='store' key="2">
+                        <p>blablabla</p>
+                    </Panel>
+                    <Panel header='component' key="3">
+                        <p>blablabla</p>
+                    </Panel>
+                </Collapse>
             </div>
         )
     }       
