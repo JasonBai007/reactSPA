@@ -9,6 +9,7 @@ module.exports = {
     ],
     output: {
         path: __dirname + '/app/dist',
+        publicPath:'dist/',  //事实上，这个配置直接影响了图片的输出路径
         filename: '[name].bundle.js'
     },
     module: {
@@ -30,11 +31,12 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        }),
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
         })
+        // 输出的文件暂时不压缩
+        // new uglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ]
 };
