@@ -2,7 +2,7 @@ import React from 'react';
 import Reflux from 'reflux';
 import {Button, Collapse, Alert} from 'antd';
 import Title from '../components/title.jsx';
-import './gallery.less';
+import './subpageReflux.less';
 
 const Panel = Collapse.Panel;
 
@@ -27,7 +27,7 @@ var myStore = Reflux.createStore({
     }
 });
 
-export default class Gallery extends React.Component {
+export default class Re extends React.Component {
     constructor(props) {
         super(props);
         this.state = {count:0};

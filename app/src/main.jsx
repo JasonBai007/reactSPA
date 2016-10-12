@@ -17,7 +17,7 @@ const SubMenu = Menu.SubMenu;
 import Welcome from './welcome/welcome.jsx';
 import Profile from './profile/profile.jsx';
 import Antdes from './antdes/antdes.jsx';
-import Gallery from './gallery/gallery.jsx';
+import Re from './subpageReflux/subpageReflux.jsx';
 import Subpage from './subpage/subpage.jsx';
 import Last from './last/last.jsx';
 import EditPage from './editPage/editPage.jsx';
@@ -74,7 +74,7 @@ class Init extends React.Component {
                             <Menu.Item key="3"><Link to="/antdes">广告系列</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub4" title={<span><Icon type="appstore" /><span>导航三</span></span>}>
-                            <Menu.Item key="4"><Link to="/gallery">Reflux起步</Link></Menu.Item>
+                            <Menu.Item key="4"><Link to="/re">Reflux起步</Link></Menu.Item>
                             <Menu.Item key="5"><Link to="/subpage">施工中</Link></Menu.Item>
                         </SubMenu>
                         <Menu.Item key="6">
@@ -98,7 +98,7 @@ ReactDOM.render((
             <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />
             <Route path="antdes" component={Antdes} />
-            <Route path="gallery" component={Gallery} />
+            <Route path="re" component={Re} />
             <Route path="subpage" component={Subpage} />
             <Route path="last" component={Last} />
             <Route path="editPage/:rowId" component={EditPage} />
