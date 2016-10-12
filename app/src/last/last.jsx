@@ -10,7 +10,7 @@ export default class Last extends React.Component {
         return (
             <div>
                 <h1 className="animated flipInX" id="ege">没有彩蛋</h1>
-                <img src={require('../../images/last.jpg')} width="100" id="lastPic" className="animated fadeInUp" />
+                <img src={require('../images/last.jpg')} width="100" id="lastPic" className="animated fadeInUp" />
             </div>
         )
     }       

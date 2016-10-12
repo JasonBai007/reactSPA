@@ -55,7 +55,7 @@ class Init extends React.Component {
         return (
             <div>
                 <div id="leftMenu"> 
-                    <img src={require('../images/logo.png')} width="50" id="logo"/>  {/*logo图标*/}                
+                    <img src={require('./images/logo.png')} width="50" id="logo"/>  {/*logo图标*/}                
                     <Menu onClick={this.handleClick}
                         style={{ width: 146 }}
                         openKeys={this.state.openKeys}
@@ -80,7 +80,8 @@ class Init extends React.Component {
                         <Menu.Item key="6">
                             <Link to="/last"><span><Icon type="solution" /><span>结尾页</span></span></Link>
                         </Menu.Item>
-                    </Menu>                    
+                    </Menu>
+                    <div id="copyright">Copyright © 白延云</div>                    
                 </div>
                 <div id="rightWrap">
                     {this.props.children}                

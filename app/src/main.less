@@ -10,6 +10,12 @@ body {
     background: #fff;
     border-right: 1px solid #e9e9e9;
 }
+#copyright {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 4%;
+}
 
 /* 覆盖antd原始样式 */
 .ant-menu-inline, .ant-menu-vertical {
@@ -31,19 +37,19 @@ body {
 /* logo样式 */
 #logo {
     display: block;
-    margin: 20px auto;
+    margin: 40px auto;
     -webkit-transition:all 1s;
     -moz-transition:all 1s;
     -o-transition:all 1s;
     -ms-transition:all 1s;
-    transition:all 1s;
-    &:hover {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg);        
-    }
+    transition:all 1s;    
+}
+#logo:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);        
 }
 
 /* 右侧宽度自适应 */
