@@ -76,7 +76,7 @@ class Editform extends React.Component {
         });
         return (
             <div id="formWrapper">
-                <Form horizontal form={this.props.form}>
+                <Form horizontal>
                     <FormItem {...formItemLayout} label="系列名称：" hasFeedback>
                         <Input type="text" {...nameProps} name="planName" />
                     </FormItem>

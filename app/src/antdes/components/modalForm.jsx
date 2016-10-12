@@ -46,7 +46,7 @@ class AformInModal extends React.Component {
             <div>
                 <Button type="primary" onClick={this.showModal} size="large">新建广告系列</Button>
                 <Modal title="新建广告系列" visible={this.state.visible} onOk={this.handleSubmit} onCancel={this.handleCancel}>
-                    <Form horizontal form={this.props.form}>
+                    <Form horizontal>
                         <FormItem {...formItemLayout} label="推广计划名称：">
                             <Input type="text" {...getFieldProps('planName')}/>
                         </FormItem>
