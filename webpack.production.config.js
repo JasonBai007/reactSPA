@@ -4,13 +4,14 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //抽取CSS文�
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
-    entry: [
-        path.resolve(__dirname, 'app/src/main.jsx')
-    ],
+    entry: {
+        pages: __dirname +'/app/src/main.jsx',
+        vendors:['react','react-dom','react-router','reflux','antd']  //第三方库和框架
+    },
     output: {
         path: __dirname + '/app/dist',
         publicPath:'dist/',  //事实上，这个配置直接影响了图片的输出路径
-        filename: '[name].bundle.js'
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -25,18 +26,19 @@ module.exports = {
         extensions: ['', '.js', '.jsx'],
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new ExtractTextPlugin("style.css"),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        })
-        // 输出的文件暂时不压缩
-        // new uglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     }
+        new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
+        new ExtractTextPlugin("bundle.css"),
+        // jquery配置
+        // new webpack.ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     "window.jQuery": "jquery"
         // })
+        // 压缩配置
+        new uglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
 };

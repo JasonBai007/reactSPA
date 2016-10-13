@@ -16,13 +16,14 @@ module.exports = {
     },
 
     // 配置入口
-    entry: [
-        path.resolve(__dirname, 'app/src/main.jsx')
-    ],
+    entry: {
+        pages: __dirname +'/app/src/main.jsx',
+        vendors:['react','react-dom','react-router','reflux','antd']  //第三方库和框架
+    },
     output: {
         // path: 'dist',  //不写居然也没事，由于有服务器，生成不了静态文件，这也是一个坑
         publicPath: 'dist',
-        filename: '[name].bundle.js'
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -37,13 +38,14 @@ module.exports = {
         extensions: ['', '.js', '.jsx'],
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new ExtractTextPlugin("style.css"),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        }),
+        new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
+        new ExtractTextPlugin("bundle.css"),
+        // 如需jquery请解锁
+        // new webpack.ProvidePlugin({
+        //     $: "jquery",
+        //     jQuery: "jquery",
+        //     "window.jQuery": "jquery"
+        // }),
         new webpack.HotModuleReplacementPlugin(),
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ]

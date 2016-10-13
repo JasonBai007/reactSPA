@@ -1,6 +1,6 @@
 {
   "name": "reactSPA",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "",
   "main": "app/src/main.jsx",
   "scripts": {
@@ -13,16 +13,15 @@
     "console-polyfill": "^0.2.2",
     "font-awesome": "^4.6.3",
     "history": "^2.1.1",
-    "jquery": "^3.0.0",
     "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.4.0",
     "reflux": "^0.4.1",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "animate.css": "^3.5.1"
   },
   "devDependencies": {
-    "animate.css": "^3.5.1",
     "babel-core": "6.x",
     "babel-eslint": "6.x",
     "babel-loader": "6.x",
