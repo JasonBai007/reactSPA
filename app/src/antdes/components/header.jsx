@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button,Checkbox,DatePicker,Select,Radio,Form,Row,Col,Icon,message,notification,Modal,Input } from 'antd';
+import moment from 'moment';
 
 // 引入标准Fetch及IE兼容依赖
 import 'whatwg-fetch';
@@ -13,14 +14,18 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
 
+/*时间控件初始的起止日期，间隔为30天*/
+let defaultStartDate = moment().subtract(30,'days').format("YYYY-MM-DD");
+let defaultEndDate = moment().format("YYYY-MM-DD");
+
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             selV: [''],
             selValue:'',
-            sDate:'',
-            eDate:'',
+            sDate:defaultStartDate,
+            eDate:defaultEndDate,
             ischecked: false,
         }        
     }
@@ -47,7 +52,7 @@ export default class Header extends React.Component {
 
     // 查询提示框
     confirmMsg = () => {           
-        console.log(this.state.selValue);
+        console.info(this.state);
     } 
 
     // 获取下拉框数据
@@ -65,11 +70,7 @@ export default class Header extends React.Component {
 
     render() {
         /*控制查询按钮状态*/
-        let isDisabled = this.state.selValue ==='' ? true : false;
-
-        /*时间控件初始的起止日期，间隔为30天*/
-        let defaultStartDate = new Date();
-        let defaultEndDate = new Date(defaultStartDate.getTime()+30*24*60*60*1000);
+        let isDisabled = this.state.selValue ==='' ? true : false;        
 
         return (
             <div id="header">

@@ -90,7 +90,7 @@ export default class Antdes extends React.Component {
        
         return (
             <div id="wrap">                
-                <Title name="广告系列" onMouseOver={this.displayAlert}/>
+                <Title name="广告系列（Press F12, watch Console）" onMouseOver={this.displayAlert}/>
                 <Header />
                 <div id="table">
                     <Table 

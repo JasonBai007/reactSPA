@@ -1,6 +1,6 @@
 # Profile
 > Target：使用React技术栈开发SPA.  
-> Techs：React - ReactRouter - Reflux - ES6 - Antd - Fetch - Babel - Webpack - Npm - MockJs - Less
+> Techs：React、ReactRouter、Reflux、ES6、Antd、Moment、Fetch、Babel、Webpack、Npm、MockJs、Less
 
 ### Features
 * 自主配置开发环境
