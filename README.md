@@ -1,6 +1,7 @@
 # Profile
-> Target：使用React技术栈开发SPA.  
-# Techs
+> Target：使用React技术栈开发SPA.
+
+### Techs
 * UI库：React
 * UI组件：Antd
 * 路由：React-Router
