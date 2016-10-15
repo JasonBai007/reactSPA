@@ -23,14 +23,14 @@ module.exports = {
     output: {
         // path: 'dist',  //不写居然也没事，由于有服务器，生成不了静态文件，这也是一个坑
         publicPath: 'dist',
-        filename: 'bundle.js'
+        filename: 'js/bundle.js'
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }, //坑：不能用叹号链接，必须写成这种格式
-            { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'less-loader') },
-            { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
-            { test: /\.(png|jpg)$/, loader: 'url?limit=8192' },
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') }, //坑：不能用叹号链接，必须写成这种格式
+            { test: /\.less$/, loader: ExtractTextPlugin.extract('css!less') },
+            { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
+            { test: /\.(png|jpg)$/, loader: 'url?limit=8192&name=img/[name].[ext]' },
             { test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/, loader: 'url' }
         ]
     },
@@ -38,14 +38,10 @@ module.exports = {
         extensions: ['', '.js', '.jsx'],
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
-        new ExtractTextPlugin("bundle.css"),
+        new webpack.optimize.CommonsChunkPlugin('vendors','js/vendors.js'),
+        new ExtractTextPlugin("css/bundle.css"),
         // 如需jquery请解锁
-        // new webpack.ProvidePlugin({
-        //     $: "jquery",
-        //     jQuery: "jquery",
-        //     "window.jQuery": "jquery"
-        // }),
+        // new webpack.ProvidePlugin({ $: "jquery" }),
         new webpack.HotModuleReplacementPlugin(),
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ]

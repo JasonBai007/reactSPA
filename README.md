@@ -1,6 +1,19 @@
 # Profile
 > Target：使用React技术栈开发SPA.  
-> Techs：React、ReactRouter、Reflux、ES6、Antd、Moment、Fetch、Babel、Webpack、Npm、MockJs、Less
+# Techs
+* UI库：React
+* UI组件：Antd
+* 路由：React-Router
+* 框架：Reflux
+* JS：ES6 
+* 样式：Less
+* 图标：FontAwesome
+* 动画：Animate.css
+* 与后台通信：Fetch
+* 日期处理：Moment
+* 假数据模拟：MockJS
+* 打包构建：Babel Webpack
+* 包管理：Npm
 
 ### Features
 * 自主配置开发环境
