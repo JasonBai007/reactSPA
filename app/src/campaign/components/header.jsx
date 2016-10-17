@@ -3,9 +3,12 @@ import {Button,Checkbox,DatePicker,Select,Radio,Form,Row,Col,Icon,message,notifi
 import moment from 'moment';
 
 // 引入标准Fetch及IE兼容依赖
-import 'whatwg-fetch';
-import 'es6-promise/dist/es6-promise.min.js';
-import 'fetch-ie8/fetch.js';
+// import 'whatwg-fetch';
+// import 'es6-promise/dist/es6-promise.min.js';
+// import 'fetch-ie8/fetch.js';
+
+// 引入Jquery
+import $ from 'jquery';
 
 // 引入 新建广告系列按钮 组件
 import BtnForm from './popup.jsx';
@@ -55,13 +58,19 @@ export default class Header extends React.Component {
         // 打印选择的查询条件        
         console.info(this.state);
         if (this.state.selValue === "蝙蝠侠") {
-            fetch('../data/filterData.json')
-                .then((res) => { return res.json(); })
-                .then((data) => {
-                    // 用请求到的数据刷新表格
-                    this.props.refreshTable(data); 
-                })
-                .catch((e) => { console.log(e.message); });            
+            // fetch('../data/filterData.json')
+            //     .then((res) => { return res.json(); })
+            //     .then((data) => {
+            //         // 用请求到的数据刷新表格
+            //         this.props.refreshTable(data); 
+            //     })
+            //     .catch((e) => { console.log(e.message); });
+            $.ajax({
+                url:'../data/filterData.json'
+            })
+            .done((data) => {
+                this.props.refreshTable(data);
+            })            
         } else {
             this.props.refreshTable({rowData:[]});
         }
@@ -70,10 +79,16 @@ export default class Header extends React.Component {
 
     // 获取下拉框数据
     fetchSelData = () => {
-        fetch('../data/selectData.json')
-            .then((res) => { console.log(res.status);return res.json(); })
-            .then((data) => { this.setState({selV:data.obj}); })
-            .catch((e) => { console.log(e.message); });
+        // fetch('../data/selectData.json')
+        //     .then((res) => { console.log(res.status);return res.json(); })
+        //     .then((data) => { this.setState({selV:data.obj}); })
+        //     .catch((e) => { console.log(e.message); });
+        $.ajax({
+            url:'../data/selectData.json'
+        })
+        .done((data) => {
+            this.setState({selV:data.obj});
+        })
     }    
 
     // 组件渲染后获取外界数据(GET)
