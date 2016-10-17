@@ -27,8 +27,8 @@ export default class Antdes extends React.Component {
         console.log(e.key);
     }
 
-    displayAlert = () => {
-        console.log('mouseover event has been triggered.')
+    refresh = () => {
+        console.log('refresh this table.')
     }
 
     // 获取表格数据
@@ -90,8 +90,8 @@ export default class Antdes extends React.Component {
        
         return (
             <div id="wrap">                
-                <Title name="广告系列（Press F12, watch Console）" onMouseOver={this.displayAlert}/>
-                <Header />
+                <Title name="广告系列（Press F12, watch Console）"/>
+                <Header refreshTable={this.refresh} />
                 <div id="table">
                     <Table 
                         rowSelection={{}} 

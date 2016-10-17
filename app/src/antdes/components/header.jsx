@@ -51,8 +51,11 @@ export default class Header extends React.Component {
     }
 
     // 查询提示框
-    confirmMsg = () => {           
+    confirmMsg = () => {   
+        // 打印选择的查询条件        
         console.info(this.state);
+        // 用请求到的数据刷新表格
+        this.props.refreshTable();
     } 
 
     // 获取下拉框数据
@@ -77,7 +80,14 @@ export default class Header extends React.Component {
                 <Form inline>
                     <Row type="flex" justify="start" gutter={16} align="middle">
                         <Col span="5">
-                            <Select onChange={this.selChange} placeholder="请选择广告系列" size="large">                                   
+                            <Select 
+                                showSearch 
+                                onChange={this.selChange} 
+                                placeholder="请选择广告系列" 
+                                size="large" 
+                                optionFilterProp="children"
+                                notFoundContent="未找到相关选项"
+                            >                                   
                                 {
                                     this.state.selV.map((v,i) => {
                                         return <Option key={i} value={v}>{v}</Option>                                                    

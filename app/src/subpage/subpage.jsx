@@ -1,8 +1,6 @@
 import React from 'react';
 import './subpage.less';
 
-import BoxWidth from './components/boxWidth';
-
 export default class Subpage extends React.Component {
     constructor(props) {
         super(props);
@@ -12,8 +10,7 @@ export default class Subpage extends React.Component {
     render() {
       return (
         <div>
-            <i className="fa fa-cog fa-spin fa-3x fa-fw"></i>
-            <BoxWidth />          
+            <i className="fa fa-cogs fa-3x" aria-hidden="true"></i>
         </div>
       );
     }
