@@ -8,7 +8,7 @@ import 'es6-promise/dist/es6-promise.min.js';
 import 'fetch-ie8/fetch.js';
 
 // 引入 新建广告系列按钮 组件
-import BtnForm from './modalForm.jsx';
+import BtnForm from './popup.jsx';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -54,13 +54,17 @@ export default class Header extends React.Component {
     confirmMsg = () => {   
         // 打印选择的查询条件        
         console.info(this.state);
-        fetch('../data/another.json')
-            .then((res) => { return res.json(); })
-            .then((data) => {
-                // 用请求到的数据刷新表格
-                this.props.refreshTable(data); 
-            })
-            .catch((e) => { console.log(e.message); });
+        if (this.state.selValue === "蝙蝠侠") {
+            fetch('../data/filterData.json')
+                .then((res) => { return res.json(); })
+                .then((data) => {
+                    // 用请求到的数据刷新表格
+                    this.props.refreshTable(data); 
+                })
+                .catch((e) => { console.log(e.message); });            
+        } else {
+            this.props.refreshTable({rowData:[]});
+        }
         
     } 
 

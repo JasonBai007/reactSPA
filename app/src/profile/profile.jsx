@@ -18,7 +18,7 @@ export default class Profile extends React.Component {
     render() {
         return (
             <div>
-                <Hello text="Web Developer"/>
+                <Hello text="FE Developer"/>
                 <Timer />
                 <Tabs defaultActiveKey="1">
                     <TabPane tab="Age" key="1"><Age /></TabPane>

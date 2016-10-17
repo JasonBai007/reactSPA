@@ -25,7 +25,7 @@ export default class EditPage extends React.Component {
 
                     {/*面包屑导航*/}
                     <Breadcrumb separator=">">
-                        <Breadcrumb.Item><Link to="/antdes">广告系列</Link></Breadcrumb.Item>
+                        <Breadcrumb.Item><Link to="/campaign">广告系列</Link></Breadcrumb.Item>
 
                         {/*从路由中获得的参数*/}
                         <Breadcrumb.Item>编辑广告系列{this.props.params.rowId}</Breadcrumb.Item>                

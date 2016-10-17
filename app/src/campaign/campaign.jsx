@@ -7,7 +7,7 @@ import 'whatwg-fetch';
 import 'es6-promise/dist/es6-promise.min.js';
 import 'fetch-ie8/fetch.js';
 
-import './antdes.less';
+import './campaign.less';
 
 // 引入组件
 import Title from '../components/title.jsx';
@@ -83,7 +83,7 @@ export default class Antdes extends React.Component {
             render: 
                 (t,r,i) => (
                     <span>
-                        <Tooltip title="编辑"><Link to={"/editPage/"+(i+1)}><i className="fa fa-pencil" /></Link></Tooltip>&nbsp;&nbsp;
+                        <Tooltip title="编辑"><Link to={"/edit/"+(i+1)}><i className="fa fa-pencil" /></Link></Tooltip>&nbsp;&nbsp;
                         <Tooltip title="删除"><i className="fa fa-trash" style={{color:'#FD5B5B'}}/></Tooltip>
                     </span>
                 )

@@ -1,33 +1,15 @@
 import React from 'react';
 import Reflux from 'reflux';
 import {Button, Collapse, Alert} from 'antd';
+
 import Title from '../components/title.jsx';
-import './subpageReflux.less';
+import actions from './actions.js';
+import myStore from './store.js';
+import './counter.less';
 
 const Panel = Collapse.Panel;
 
-// 创建动作
-var actions = Reflux.createActions(['increment']);
-
-// 创建储存库
-var myStore = Reflux.createStore({
-
-    // 监听所有动作
-    listenables: actions,
-    // 初始化
-    init() {
-        this.num = {count:0}
-    },
-
-    // 分别监听每一个动作
-    onIncrement() {
-        this.num.count++;
-        // 将新数值通知出去
-        this.trigger(this.num.count);
-    }
-});
-
-export default class Re extends React.Component {
+export default class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {count:0};

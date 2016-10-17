@@ -1,7 +1,7 @@
 import React from 'react';
-import './subpage.less';
+import './charts.less';
 
-export default class Subpage extends React.Component {
+export default class Charts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +10,7 @@ export default class Subpage extends React.Component {
     render() {
       return (
         <div>
-            <i className="fa fa-cogs fa-3x" aria-hidden="true"></i>
+            <i className="fa fa-cog fa-spin fa-3x" aria-hidden="true"></i>
         </div>
       );
     }
