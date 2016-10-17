@@ -54,8 +54,14 @@ export default class Header extends React.Component {
     confirmMsg = () => {   
         // 打印选择的查询条件        
         console.info(this.state);
-        // 用请求到的数据刷新表格
-        this.props.refreshTable();
+        fetch('../data/another.json')
+            .then((res) => { return res.json(); })
+            .then((data) => {
+                // 用请求到的数据刷新表格
+                this.props.refreshTable(data); 
+            })
+            .catch((e) => { console.log(e.message); });
+        
     } 
 
     // 获取下拉框数据

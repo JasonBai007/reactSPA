@@ -27,8 +27,9 @@ export default class Antdes extends React.Component {
         console.log(e.key);
     }
 
-    refresh = () => {
-        console.log('refresh this table.')
+    refresh = (data) => {
+        // 刷新表格
+        this.setState({tData:data.rowData});
     }
 
     // 获取表格数据

@@ -1,4 +1,7 @@
-// 修改模板，粘贴到控制台模拟假数据(http://mockjs.com/examples.html)
+/**
+将以下模板粘贴到(http://mockjs.com/examples.html)的控制台
+把生成的模拟数据粘贴出来，保存成JSON格式的文件
+*/
 var data=Mock.mock({
     "rowData|18-48":[{
         "name|1":["钢铁侠","蜘蛛侠","蝙蝠侠","蚁人","幻视","鹰眼","金刚狼","冬兵","吸血鬼","黑寡妇","超人","美国队长"],
