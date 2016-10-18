@@ -28,7 +28,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendors','js/vendors.js'),
         new ExtractTextPlugin("css/bundle.css"),
         // jquery配置
-        new webpack.ProvidePlugin({ $: "jquery" }),
+        // new webpack.ProvidePlugin({ $: "jquery" }),
         // 压缩配置
         new webpack.optimize.UglifyJsPlugin({
             compress: {

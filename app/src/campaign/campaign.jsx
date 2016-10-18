@@ -3,12 +3,9 @@ import {Table,Icon,Tooltip} from 'antd';
 import { Link } from 'react-router';
 
 // 引入标准Fetch及IE兼容依赖
-// import 'whatwg-fetch';
-// import 'es6-promise/dist/es6-promise.min.js';
-// import 'fetch-ie8/fetch.js';
-
-// 引入Jquery
-import $ from 'jquery';
+import 'whatwg-fetch';
+import 'es6-promise/dist/es6-promise.min.js';
+import 'fetch-ie8/fetch.js';
 
 import './campaign.less';
 
@@ -37,19 +34,10 @@ export default class Antdes extends React.Component {
 
     // 获取表格数据
     fetchTableData = () => {
-        // fetch('../data/tableData.json')
-        //     .then((res) => { console.log(res.status);return res.json(); })
-        //     .then((data) => { this.setState({loading:false});this.setState({tData:data.rowData}); })
-        //     .catch((e) => { console.log(e.message);});
-        $.ajax({
-            url:'../data/tableData.json'
-        })
-        .done((data) => {
-            this.setState({
-                loading:false,
-                tData:data.rowData
-            });
-        })
+        fetch('../data/tableData.json')
+            .then((res) => { console.log(res.status);return res.json(); })
+            .then((data) => { this.setState({loading:false});this.setState({tData:data.rowData}); })
+            .catch((e) => { console.log(e.message);});
     }    
 
     // 组件渲染后获取外界数据(GET)
