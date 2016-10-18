@@ -17,13 +17,14 @@ module.exports = {
 
     // 配置入口
     entry: {
-        pages: __dirname +'/app/src/main.jsx',
+        pages: __dirname +'/app/src/router.jsx',
         vendors:['react','react-dom','react-router','reflux','antd']  //第三方库和框架
     },
     output: {
         // path: 'dist',  //不写居然也没事，由于有服务器，生成不了静态文件，这也是一个坑
         publicPath: 'dist',
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [
