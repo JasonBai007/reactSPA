@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'); //抽取CSS文�
 module.exports = {
     entry: {
         pages: __dirname +'/app/src/router.jsx',
-        vendors:['react','react-dom','react-router','reflux','antd']  //第三方库和框架
+        vendors:['react','react-dom','react-router','reflux']  //第三方库和框架
     },
     output: {
         path: __dirname + '/app/dist',

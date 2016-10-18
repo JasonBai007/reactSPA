@@ -8,23 +8,23 @@
     "start": "webpack-dev-server --progress --hot --colors"
   },
   "dependencies": {
+    "animate.css": "^3.5.1",
     "antd": "^1.0.1",
     "babel-runtime": "^6.11.6",
     "console-polyfill": "^0.2.2",
-    "font-awesome": "^4.6.3",
     "history": "^2.1.1",
     "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.4.0",
     "reflux": "^0.4.1",
-    "whatwg-fetch": "^1.0.0",
-    "animate.css": "^3.5.1"
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "6.x",
     "babel-eslint": "6.x",
     "babel-loader": "6.x",
+    "babel-plugin-antd": "^0.5.1",
     "babel-preset-es2015": "6.x",
     "babel-preset-react": "6.x",
     "babel-preset-stage-0": "6.x",

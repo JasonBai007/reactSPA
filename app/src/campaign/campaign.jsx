@@ -83,8 +83,8 @@ export default class Antdes extends React.Component {
             render: 
                 (t,r,i) => (
                     <span>
-                        <Tooltip title="编辑"><Link to={"/edit/"+(i+1)}><i className="fa fa-pencil" /></Link></Tooltip>&nbsp;&nbsp;
-                        <Tooltip title="删除"><i className="fa fa-trash" style={{color:'#FD5B5B'}}/></Tooltip>
+                        <Tooltip title="编辑"><Link to={"/edit/"+(i+1)}><Icon type="edit" /></Link></Tooltip>&nbsp;&nbsp;
+                        <Tooltip title="删除"><Icon type="delete" style={{color:'#FD5B5B'}}/></Tooltip>
                     </span>
                 )
         }];              
