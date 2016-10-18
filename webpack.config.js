@@ -24,7 +24,6 @@ module.exports = {
         // path: 'dist',  //不写居然也没事，由于有服务器，生成不了静态文件，这也是一个坑
         publicPath: 'dist',
         filename: 'js/bundle.js',
-        chunkFilename: '[id].chunk.js'
     },
     module: {
         loaders: [
