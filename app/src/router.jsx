@@ -7,15 +7,17 @@ import Init from './main.jsx';
 import Welcome from './welcome/welcome.jsx';
 import Profile from './profile/profile.jsx';
 import Campaign from './campaign/campaign.jsx';
+import Edit from './edit/edit.jsx';
 import Counter from './counter/counter.jsx';
 import Charts from './charts/charts.jsx';
 import Last from './last/last.jsx';
-import Edit from './edit/edit.jsx';
 import NotFoundPage from './nofind/nofind.jsx';
+import Login from './login/login.jsx';
 
 // 配置路由，并将路由注入到id为init的DOM元素中
 ReactDOM.render(
-    <Router history={hashHistory} >
+    <Router history={hashHistory} >        
+        <Route path="/login" component={Login} />
         <Route path="/" component={Init}>
             <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />
