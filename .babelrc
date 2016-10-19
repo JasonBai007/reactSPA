@@ -1,5 +1,7 @@
-//插件可实现antd组件的按需加载，并且样式也能载入，就不用单独引样式了
 {
-  "presets": [ "es2015", "stage-0", "react"],
-  "plugins": [["antd", {style: true}]]
+    "presets": [ "es2015", "stage-0", "react"],
+    "plugins": [["import", {
+        "libraryName": "antd",
+        "style": true
+    }]]
 }
