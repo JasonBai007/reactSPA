@@ -48,8 +48,8 @@
 ### Diary(填坑日志)
 > 1、如果引入FontAwesome,会严重增加编译后的CSS文件体积  
 > 2、通过定义Vendors，可以抽取出第三方库文件，避免所有js文件打包在一起  
-> 3、通过安装babel-plugin-import插件，可以自动抽离用到的ant组件
-> 4、路由的history配置，如果配置成browserHistory,服务器端也需要做相应的配置
+> 3、通过安装babel-plugin-import插件，可以自动抽离用到的ant组件  
+> 4、路由的history配置，如果配置成browserHistory,服务器端也需要做相应的配置  
 > 5、路由的history配置，如果配置成hashHistory,则url地址里会有难看的后缀
 > 6、编译静态文件的webpack配置中，插件项目需要设置成生产环境NODE_ENV:JSON.stringify("production")
  
