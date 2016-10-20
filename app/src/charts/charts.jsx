@@ -1,5 +1,5 @@
 import React from 'react';
-import Logout from '../components/logout.jsx';
+import Topbar from '../components/Topbar.jsx';
 
 export default class Charts extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class Charts extends React.Component {
     render() {
       return (
         <div>
-            <Logout />
+            <Topbar />
         </div>
       );
     }

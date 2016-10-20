@@ -10,7 +10,7 @@ import 'fetch-ie8/fetch.js';
 import './campaign.less';
 
 // 引入组件
-import Title from '../components/title.jsx';
+import Title from '../components/Title.jsx';
 import Header from './components/header.jsx';
 
 export default class Antdes extends React.Component {

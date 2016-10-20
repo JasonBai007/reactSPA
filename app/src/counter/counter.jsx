@@ -2,7 +2,7 @@ import React from 'react';
 import Reflux from 'reflux';
 import {Button, Collapse, Alert} from 'antd';
 
-import Title from '../components/title.jsx';
+import Title from '../components/Title.jsx';
 import actions from './actions.js';
 import myStore from './store.js';
 import './counter.less';
