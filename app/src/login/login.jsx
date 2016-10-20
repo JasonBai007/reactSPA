@@ -21,11 +21,16 @@ class LoginPage extends React.Component {
         let p = this.props.form.getFieldsValue().password;
         if (n === 'ilovejasonbai' && p === 'ilovejasonbai') {
             // 表单的路由处理
-            browserHistory.push('/');            
+            let ss = window.sessionStorage;
+            ss.username = n;            
+            ss.password = p;            
+            browserHistory.push('/');
+        } else {
+            this.openNotificationWithIcon('info');
         }
     }
 
-    // 返回一个弹框对象
+    // 返回一个弹框对象，提示用户名和密码
     openNotificationWithIcon = (type) => {
         return notification[type]({
                  message: '用户名&密码',
@@ -49,7 +54,7 @@ class LoginPage extends React.Component {
                             <Input placeholder="Username" {...getFieldProps('username')} />
                         </FormItem>
                         <FormItem>
-                            <Input placeholder="Password" {...getFieldProps('password')} />
+                            <Input type="password" placeholder="Password" {...getFieldProps('password')} />
                         </FormItem>                    
                         <Button type="primary" htmlType="submit" id="loginBtn">Login</Button>
                     </Form>
