@@ -1,13 +1,16 @@
 import React from 'react';
-import {Icon} from 'antd';
+import Logout from '../components/logout.jsx';
 
 export default class Charts extends React.Component {
     constructor(props) {
         super(props);
     }
+    
     render() {
       return (
-        <Icon type="setting"/>
+        <div>
+            <Logout />
+        </div>
       );
     }
 }
