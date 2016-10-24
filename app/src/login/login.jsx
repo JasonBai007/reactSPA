@@ -12,19 +12,12 @@ class LoginPage extends React.Component {
         super(props);
     }
 
-    changeMe = (e) => {
-        console.log(`checked = ${e.target.checked}`);
-    }
-
     handleSubmit = (e) => {
         e.preventDefault();
         let n = this.props.form.getFieldsValue().username;
         let p = this.props.form.getFieldsValue().password;
         if (n === 'ilovejasonbai' && p === 'ilovejasonbai') {
-            // 表单的路由处理
-            let ss = window.sessionStorage;
-            ss.username = n;            
-            ss.password = p;            
+            // 表单的路由处理                       
             history.push('/');
         } else {
             this.openNotificationWithIcon('info');

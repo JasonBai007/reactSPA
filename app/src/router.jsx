@@ -16,22 +16,11 @@ import Last from './last/last.jsx';
 import NotFoundPage from './nofind/nofind.jsx';
 import Login from './login/login.jsx';
 
-// 判断是否已登录钩子
-const isLogin = (nextState, replace) => {
-    let ss = window.sessionStorage;
-    let un = ss.username;
-    let pw = ss.password;
-    // 如果没有登录，则将路由切换到login
-    if (!(un === 'ilovejasonbai' && pw === 'ilovejasonbai')) {
-        history.push('/login');
-    }
-}
-
 // 配置路由，并将路由注入到id为init的DOM元素中
 ReactDOM.render(
     <Router history={history} >        
         <Route path="/login" component={Login} />
-        <Route path="/" component={Init} onEnter={isLogin}>
+        <Route path="/" component={Init} >
             <IndexRoute component={Welcome}/>
             <Route path="profile" component={Profile} />
             <Route path="campaign" component={Campaign} />

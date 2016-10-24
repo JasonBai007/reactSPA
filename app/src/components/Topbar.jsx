@@ -11,7 +11,6 @@ export default class Logout extends React.Component {
 
     handleChange = (v) => {
         if(v === '退出') {
-            window.sessionStorage.clear();
             history.push('/login');
         }
     }
