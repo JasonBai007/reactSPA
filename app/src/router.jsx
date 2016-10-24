@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute, Redirect } from 'react-router';
+import { Router, Route, IndexRoute, Redirect } from 'react-router';
+import createHistory from 'history/lib/createHashHistory';
+const history = createHistory();
 
 // 引入单个页面（包括嵌套的子页面）
 import Init from './main.jsx';
@@ -21,13 +23,13 @@ const isLogin = (nextState, replace) => {
     let pw = ss.password;
     // 如果没有登录，则将路由切换到login
     if (!(un === 'ilovejasonbai' && pw === 'ilovejasonbai')) {
-        replace({ pathname: '/login' });
+        history.push('/login');
     }
 }
 
 // 配置路由，并将路由注入到id为init的DOM元素中
 ReactDOM.render(
-    <Router history={browserHistory} >        
+    <Router history={history} >        
         <Route path="/login" component={Login} />
         <Route path="/" component={Init} onEnter={isLogin}>
             <IndexRoute component={Welcome}/>

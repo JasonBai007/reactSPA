@@ -1,10 +1,11 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
 import { Form, Input, Button, notification} from 'antd';
+import createHistory from 'history/lib/createHashHistory';
 
 import './login.less'
 
 const FormItem = Form.Item;
+const history = createHistory();
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class LoginPage extends React.Component {
             let ss = window.sessionStorage;
             ss.username = n;            
             ss.password = p;            
-            browserHistory.push('/');
+            history.push('/');
         } else {
             this.openNotificationWithIcon('info');
         }
