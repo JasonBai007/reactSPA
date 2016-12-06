@@ -54,6 +54,7 @@
 > 5、路由的history配置，如果配置成hashHistory,则url地址里会有难看的后缀  
 > 6、编译静态文件的webpack配置中，插件项目需要设置成生产环境NODE_ENV:JSON.stringify("production")  
 > 7、实现路由的跳转，页面内的导航，请使用history（自行Github之），这绝壁是个大坑！
+> 8、本项目使用的是antd 1.x版本，想升级到最新版本（2.5.1），结果需要改动的地方实在太多，于是放弃！
  
 License
 ----
