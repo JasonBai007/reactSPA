@@ -14,7 +14,7 @@
 * 日期处理：Moment
 * 假数据模拟：MockJS
 * 打包构建：Babel Webpack
-* 包管理：Npm
+* 包管理：Npm & Yarn
 
 ### Features
 * 自主配置开发环境
@@ -28,7 +28,7 @@
 * 支持浏览器自动刷新
 
 ### Usage
-> 1、安装依赖：$ npm install  
+> 1、安装依赖：$ yarn install  
 > 2、启动服务：$ npm start  
 > 3、生成文件：$ npm run build  
 
@@ -55,6 +55,8 @@
 > 6、编译静态文件的webpack配置中，插件项目需要设置成生产环境NODE_ENV:JSON.stringify("production")  
 > 7、实现路由的跳转，页面内的导航，请使用history（自行Github之），这绝壁是个大坑！  
 > 8、本项目使用的是antd 1.x版本，想升级到最新版本（2.x），结果需要改动的地方实在太多，于是放弃
+> 9、本项目由于很久以前开发的，导致服务启动后控制台会有大量Warnnings
+> 10、现在使用yarn管理版本，避免了版本冲突，请使用yarn命令安装卸载依赖包：yarn add|remove packages
  
 License
 ----
