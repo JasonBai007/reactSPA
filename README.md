@@ -54,9 +54,9 @@
 > 5、路由的history配置，如果配置成hashHistory,则url地址里会有难看的后缀  
 > 6、编译静态文件的webpack配置中，插件项目需要设置成生产环境NODE_ENV:JSON.stringify("production")  
 > 7、实现路由的跳转，页面内的导航，请使用history（自行Github之），这绝壁是个大坑！  
-> 8、本项目使用的是antd 1.x版本，想升级到最新版本（2.x），结果需要改动的地方实在太多，于是放弃
-> 9、本项目由于很久以前开发的，导致服务启动后控制台会有大量Warnnings
-> 10、现在使用yarn管理版本，避免了版本冲突，请使用yarn命令安装卸载依赖包：yarn add|remove packages
+> 8、本项目使用的是antd 1.x版本，想升级到最新版本（2.x），结果需要改动的地方实在太多，于是放弃  
+> 9、本项目由于很久以前开发的，导致服务启动后控制台会有大量Warnnings  
+> 10、现在使用yarn管理版本，避免了版本冲突，请使用yarn命令安装卸载依赖包：yarn add|remove packages  
  
 License
 ----
